@@ -16,6 +16,7 @@ public class contactAdapter extends RecyclerView.Adapter<itemViewHolder>{
     List<itemData> list = Collections.emptyList();
     final String Doctor = "Doctor";
     final String lover = "love";
+    final String None = "None";
     String TAG = "van thien mon";
     Context context;
     ClickListiner listiner;
@@ -28,7 +29,6 @@ public class contactAdapter extends RecyclerView.Adapter<itemViewHolder>{
     @Override
     public itemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context1 = parent.getContext();
-        Log.d(TAG, "onCreateViewHolder: -----------------------------------------------------------------------------------------------");
         LayoutInflater inflater = LayoutInflater.from(context1);
         View contactView = inflater.inflate(R.layout.item_layout, parent, false);
         itemViewHolder viewHolder = new itemViewHolder(contactView);
@@ -37,19 +37,23 @@ public class contactAdapter extends RecyclerView.Adapter<itemViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull itemViewHolder holder, int position) {
+        Log.d(TAG, "onBindViewHolder: ------------------------------------------------------------------------------------");
         final int index = holder.getAdapterPosition();
         final String mName = list.get(position).name;
         final String mPhone = list.get(position).phoneNum;
         final int mId = list.get(position).typeId;
-        holder.name.setText(list.get(position).name);
-        holder.phoneNumber.setText(list.get(position).phoneNum);
+        holder.setTextName(list.get(position).name);
+        holder.setTextPhone(list.get(position).phoneNum);
         switch (list.get(position).typeText){
             case Doctor:
-                holder.iconType.setImageResource(R.drawable.user_md_24);
-                Log.d(TAG, "onBindViewHolder: height = "+ holder.iconType.getMeasuredHeight()+ " width = "+holder.iconType.getMeasuredWidth());
+                holder.setIconType(R.drawable.user_md_24);
                 break;
             case lover:
-                holder.iconType.setImageResource(R.drawable.following_24);
+                holder.setIconType(R.drawable.following_24);
+                break;
+            case None:
+                holder.setIconType(R.drawable.following_24);
+                break;
         }
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override

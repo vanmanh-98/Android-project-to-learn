@@ -5,19 +5,14 @@
     android:clickable="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal">
-    <com.example.sqlitesample.icon
-        android:id="@+id/frameIcon"
-        android:background="#C0C0C0"
-        android:layout_height="match_parent"
-        android:contentDescription="icon type"
-        android:layout_width="match_parent">
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </ImageView>
-    </com.example.sqlitesample.icon>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_height="match_parent">
+    </ImageView>
     <LinearLayout
         android:id="@+id/text"
         android:layout_width="wrap_content"

@@ -11,7 +11,7 @@ public class DBhelper extends SQLiteOpenHelper {
     final static int DB_VERSION = 1;
     final static String DB_NAME = "CONTACT";
     final  String TABLE_NAME = "CONTACT_TABLE";
-    final  String id = "Stt";
+    public static final  String id = "Stt";
     final String name_column = "Name";
     final String phone_column = "Phone_number";
     final String type_column = "Contact_Type";
